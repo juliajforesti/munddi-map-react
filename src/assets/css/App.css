@@ -74,6 +74,7 @@ input:focus{
 /*  list */
 ul {
   padding: 0;
+  height: 90vh;
 }
 li {
   list-style-type: none;
