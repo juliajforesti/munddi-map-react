@@ -103,11 +103,13 @@ footer > p {
   font-size: 0.7rem;
 }
 
+#root, .main-page, .menu-box, .map-container, .map-container > div{
+  max-height: 90vh;
+}
+
 @media only screen and (max-width: 600px) {
   .menu-icon {
     box-shadow: none;
   }
-  #root, .main-page, .menu-box, .map-container, .map-container > div{
-    max-height: 90vh;
-  }
+
 }
