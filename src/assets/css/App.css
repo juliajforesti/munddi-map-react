@@ -111,5 +111,7 @@ footer > p {
   .menu-icon {
     box-shadow: none;
   }
-
+  .search-container{
+    z-index: 100000;
+  }
 }
