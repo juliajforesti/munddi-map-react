@@ -4,7 +4,7 @@ const List = (props) => {
   const handleClick = (point) => {
     props.setPosition({ lat: point.lat, lng: point.lng });
     // props.marker.current.options.title, point.name
-    props.map.setView([point.lat, point.lng], 18);
+    props.map.flyTo([point.lat, point.lng], 18);
   };
   return (
     <div className="list-container">
