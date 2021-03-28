@@ -21,7 +21,7 @@ const Map = () => {
   const [searchInput, setSearchInput] = useState("");
   const [position, setPosition] = useState({
     lat: -23.53974278720173,
-    lng: -44.72131030304516,
+    lng: -46.72131030304516,
   });
   const [bounds, setBounds] = useState({
     _northEast: {

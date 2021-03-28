@@ -53,6 +53,10 @@
   border-bottom: 2px solid white;
   width: 100%;
   color: white;
+  border-radius: 0%;
+}
+input:focus{
+  outline: none;
 }
 ::placeholder {
   color: rgba(255, 255, 255, 0.61);
@@ -60,7 +64,6 @@
 .list-container {
   margin-top: 4rem;
 }
-
 
 .leaflet-container {
   height: 100vh;
@@ -79,4 +82,10 @@ li {
 }
 li h5 {
   text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-icon {
+    box-shadow: none;
+  }
 }
