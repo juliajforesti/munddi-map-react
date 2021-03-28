@@ -90,8 +90,24 @@ li h5:hover{
   color: #257dc9;
 }
 
+
+footer{
+  background-color: #257dc9;
+  height: 10vh;
+  color: white;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+footer > p {
+  font-size: 0.7rem;
+}
+
 @media only screen and (max-width: 600px) {
   .menu-icon {
     box-shadow: none;
+  }
+  #root, .main-page, .menu-box, .map-container, .map-container > div{
+    max-height: 90vh;
   }
 }
