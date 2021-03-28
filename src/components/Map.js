@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
+import L from 'leaflet';
 import munddiApi from "../apis/munddi.config";
 import { Slide } from "react-awesome-reveal";
 import {
   MapContainer,
   TileLayer,
   Marker,
-  Popup,
   ZoomControl,
+  Tooltip
 } from "react-leaflet";
 import Search from "./Search";
 import List from "./List";
@@ -19,6 +20,7 @@ const Map = () => {
   const [toggleSearch, setToggleSearch] = useState(true);
   const [searchResult, setSearchResult] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const marker = useRef(null)
   const [position, setPosition] = useState({
     lat: -23.53974278720173,
     lng: -46.72131030304516,
@@ -68,7 +70,6 @@ const Map = () => {
         const response = await munddiApi.get(
           `/pdvs?ne_lat=-21&ne_lng=-43&sw_lat=-25&sw_lng=-49`
         );
-        console.log(response.data);
         setPoints([...response.data.data]);
         setSearchResult([...response.data.data]);
       } catch (error) {
@@ -84,7 +85,6 @@ const Map = () => {
         const response = await munddiApi.get(
           `/pdvs?ne_lat=${bounds._northEast.lat}&ne_lng=${bounds._northEast.lng}&sw_lat=${bounds._southWest.lat}&sw_lng=${bounds._southWest.lng}`
         );
-        console.log(response.data);
         setSearchResult([...response.data.data]);
       } catch (error) {
         console.error(error);
@@ -117,6 +117,7 @@ const Map = () => {
                   points={searchResult}
                   map={map}
                   setPosition={setPosition}
+                  marker={marker}
                 />
               </div>
             </Slide>
@@ -135,15 +136,15 @@ const Map = () => {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {searchResult.map((point) => (
-              <Marker position={[point.lat, point.lng]}>
-                <Popup>
+            {searchResult.map((point, idx) => (
+              <Marker position={[point.lat, point.lng]} key={idx} title={idx} ref={marker}>
+                <Tooltip>
                   <h5>{point.name} </h5>
                   <p>{point.street}</p>
                   <p>
                     {point.city} / {point.uf}
                   </p>
-                </Popup>
+                </Tooltip>
               </Marker>
             ))}
             <ZoomControl position="bottomright" />

@@ -15,7 +15,7 @@ const Search = (props) => {
     <form>
       <input
         type="text"
-        placeholder="Buscar"
+        placeholder="Digite um nome..."
         value={searchInput}
         onChange={handleChange}
       />

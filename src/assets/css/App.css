@@ -78,10 +78,14 @@ li {
   list-style-type: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.356);
   margin: 0.6rem;
-  cursor: pointer;
 }
 li h5 {
+  cursor: pointer;
   text-transform: capitalize;
+}
+li h5:hover{
+  text-decoration: underline;
+  color: #257dc9;
 }
 
 @media only screen and (max-width: 600px) {
