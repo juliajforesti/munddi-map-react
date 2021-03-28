@@ -45,7 +45,7 @@ const Map = () => {
     setSearchResult([...filtered]);
   };
 
-  // setting boundries and position to map current position
+  // setting boundaries and position to map current position
   const onMove = useCallback(() => {
     setPosition(map.getCenter());
     setBounds(map.getBounds());
@@ -77,7 +77,7 @@ const Map = () => {
     })();
   }, []);
 
-  // updating result with view boundries
+  // updating result with view boundaries
   useEffect(() => {
     (async function () {
       try {

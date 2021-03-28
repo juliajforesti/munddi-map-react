@@ -2,9 +2,12 @@
   display: flex;
   align-items: flex-start;
 }
+.menu-container {
+  z-index: 1000;
+  height: 100vh;
+}
 .menu-icon {
   position: absolute;
-  /* z-index: 100000; */
   background-color: #257dc9;
   color: white;
   padding: 0.5rem;
@@ -14,9 +17,8 @@
 }
 .menu-box {
   position: absolute;
-  /* z-index: 100000; */
   overflow: scroll;
-  width: 25vw;
+  width: 280px;
   height: 100vh;
   background-color: white;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.493);
@@ -24,7 +26,7 @@
 .menu {
   position: absolute;
   overflow: scroll;
-  width: 25vw;
+  width: 280px;
   height: 100vh;
   background-color: white;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.493);
@@ -32,7 +34,7 @@
 .search-container {
   display: flex;
   box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.493);
-  width: 25vw;
+  width: 280px;
   height: 3rem;
   position: fixed;
   background-color: #257dc9;
@@ -53,17 +55,13 @@
   color: white;
 }
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgba(255, 255, 255, 0.61);
 }
 .list-container {
   margin-top: 4rem;
 }
 
-.menu-container {
-  z-index: 1000;
-  height: 100vh;
-}
+
 .leaflet-container {
   height: 100vh;
   width: 100vw;
