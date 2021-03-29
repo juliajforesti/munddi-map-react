@@ -15,28 +15,30 @@
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.493);
   margin: 0.3rem;
 }
+.close-icon{
+  cursor: pointer;
+}
 .menu-box {
   position: absolute;
-  overflow: scroll;
+
   width: 280px;
-  height: 100vh;
   background-color: white;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.493);
 }
 .menu {
-  position: absolute;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
   width: 280px;
-  height: 100vh;
+  height: 90vh;
   background-color: white;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.493);
 }
 .search-container {
+  position: absolute;
   display: flex;
   box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.493);
   width: 280px;
-  height: 3rem;
-  position: fixed;
+  padding: 1rem 0.5rem;
   background-color: #257dc9;
   align-items: center;
 }
@@ -62,8 +64,8 @@ input:focus{
   color: rgba(255, 255, 255, 0.61);
 }
 .list-container {
-  max-height: 100vh;
-  margin-top: 4rem;
+  height: 100%;
+  padding-top: 4rem;
 }
 
 .leaflet-container {
@@ -74,7 +76,8 @@ input:focus{
 /*  list */
 ul {
   padding: 0;
-  height: 90vh;
+  overflow: scroll;
+  height: 100%;
 }
 li {
   list-style-type: none;
@@ -111,7 +114,5 @@ footer > p {
   .menu-icon {
     box-shadow: none;
   }
-  .search-container{
-    z-index: 100000;
-  }
+
 }

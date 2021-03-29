@@ -106,7 +106,7 @@ const Map = () => {
             <Slide className="menu-box" damping={0.2} direction="left">
               <div className="menu">
                 <div className="search-container">
-                  <CgClose size="2em" onClick={handleToggle} color="white" />
+                  <CgClose size="2em" onClick={handleToggle} color="white" className='close-icon' />
                   <Search
                     searchInput={searchInput}
                     setSearchInput={setSearchInput}
